@@ -170,9 +170,9 @@ john pdf2.hash   # repeated for each of the three files
 - A hash was extracted from each file and attacked with John the Ripper's default wordlist (`/usr/share/john/password.lst`).
 - All three files used short, weak dictionary-style passwords and were each recovered in well under one second — several orders of magnitude faster than a brute-force of a well-chosen password would take.
 
-![PDF 1 — recovered report](images/5-screenshot-pdf1-cracked.png)
-![PDF 2 — recovered report](images/6-screenshot-pdf2-cracked.png)
-![PDF 3 — recovered report](images/7-screenshot-pdf3-cracked.png)
+![PDF 1 — recovered report](images/Screenshot-pdf1-cracked.png)
+![PDF 2 — recovered report](images/Screenshot-pdf2-cracked.png)
+![PDF 3 — recovered report](images/Screenshot-pdf3-cracked.png)
 > *Description: Recovered patient pathology reports. Patient-identifying fields (name, ID, date of birth, referring doctor, specimen/lab reference) are redacted in every screenshot.*
 
 **Analysis:** weak, predictable document passwords provided negligible real-world protection once the files themselves were exposed. Recovered password values and patient identifiers are deliberately **not reproduced** in this repository — see the Security & Ethical Disclaimer below.
