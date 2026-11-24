@@ -267,7 +267,7 @@ Even in a training exercise, simulated PII should be treated as if it were real:
 ### 6. Documentation
 Findings are only useful when clearly documented: what was done, what was seen, why it matters, and how to reduce the risk.
 
-📄 **Full report:** [WK4-FINAL Penetration Testing Report (PDF)](report/WK4-FINAL-Mediroza-Report.pdf)
+📄 **Full report:** [WK4-FINAL Penetration Testing Report (PDF)](reports/WK4-FINAL PENTEST-REPORT - TSEPO MAROIBAKI.pdf)
 
 <!--
   Attach your PDF report here:
