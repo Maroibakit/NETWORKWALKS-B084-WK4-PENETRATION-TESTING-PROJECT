@@ -75,7 +75,6 @@ Key capabilities practised:
 | 🐉 Pentest workstation | Kali Linux (`pentest-serv01`) |
 | 🔎 whois | Domain registration data |
 | 🌐 WhatWeb | Web technology / server fingerprinting |
-| 📡 nslookup | DNS resolution (via 8.8.8.8) |
 | 📥 curl | HTTP header inspection |
 | 🧪 nuclei | TLS/SSL info, missing security headers, DNS/WHOIS fingerprints |
 | 🗂️ Manual directory review | `robots.txt` and path enumeration for exposed directories |
