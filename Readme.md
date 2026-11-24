@@ -150,7 +150,7 @@ The hospital's patient-facing lookup/login mechanism, intended to gate access to
 
 ## Part 3. Exploitation & Initial Access (Milestone 1)
 
-Building on the input-handling weakness above and the exposed `/patient/` directory, we accessed a restricted patient-report area of the application. We retrieved three confidential, password-protected PDF pathology lab reports as proof of access.
+Building on the input-handling weakness above and the exposed `/patient/` directory, I accessed a restricted patient-report area of the application. I retrieved three confidential, password-protected PDF pathology lab reports as proof of access.
 
 No destructive actions, denial-of-service techniques, or social engineering were used, consistent with the engagement's rules of engagement.
 
