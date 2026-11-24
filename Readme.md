@@ -98,9 +98,6 @@ whois medirozahospital.com
 - Registrant, admin and tech contacts fully masked by a WHOIS privacy proxy.
 - Name servers: `dns1.namecheaphosting.com`, `dns2.namecheaphosting.com`. **DNSSEC: unsigned.**
 
-![WHOIS output](images/1-screenshot-whois.png)
-> *Description: WHOIS record showing registrar, dates, status flags, privacy service and name servers.*
-
 ---
 
 ### Step 2. WhatWeb & HTTP behaviour
@@ -112,10 +109,6 @@ curl -i medirozahospital.com
 - HTTP `301` redirect to HTTPS; the HTTPS root initially returned `403 Forbidden`.
 - `Server: LiteSpeed`; header `x-turbo-charged-by: LiteSpeed` present.
 - Resolves to **199.188.201.16** (United States).
-
-![WhatWeb / curl output](images/2-screenshot-whatweb-curl.png)
-> *Description: HTTP redirect chain, server banners and headers for the target.*
-
 ---
 
 ### Step 3. nuclei: SSL/TLS and security header review
@@ -129,9 +122,6 @@ nuclei -u https://medirozahospital.com
 - CSP present but does not restrict `object-src` (weak-CSP finding).
 - SPF present (soft fail `~all`); DMARC present but **monitor-only** (`p=none`); DKIM published.
 - SRV records point to `cpanelemaildiscovery.cpanel.net` → cPanel-managed hosting account.
-
-![nuclei scan output](images/3-screenshot-nuclei.png)
-> *Description: nuclei output showing TLS info, missing security headers and DNS/WHOIS fingerprints.*
 
 ---
 
@@ -164,7 +154,7 @@ The hospital's patient-facing lookup/login mechanism, intended to gate access to
 
 ## Part 3. Exploitation & Initial Access (Milestone 1)
 
-Building on the input-handling weakness above and the exposed `/patient/` directory, access was obtained to a restricted patient-report area of the application. Three confidential, password-protected PDF pathology lab reports were retrieved as proof of access.
+Building on the input-handling weakness above and the exposed `/patient/` directory, we accessed a restricted patient-report area of the application. We retrieved three confidential, password-protected PDF pathology lab reports as proof of access.
 
 No destructive actions, denial-of-service techniques, or social engineering were used, consistent with the engagement's rules of engagement.
 
@@ -252,7 +242,7 @@ Following the directory-indexing finding in Part 1, `/old/` was found to contain
 
 ### Problem 1. Weak lookup validation masked as a "login"
 The patient-record lookup initially looked like a standard authentication form, which made the input-handling weakness easy to overlook at first glance.
-* **Investigation:** varying input systematically and comparing full response bodies (not just status codes) surfaced the differential behaviour that pointed to an underlying enumeration/input-validation flaw.
+* **Investigation:** Varying input systematically and comparing full response bodies (not just status codes) surfaced the differential behaviour that pointed to an underlying enumeration/input-validation flaw.
 * **Resolution:** once confirmed, the weakness was used only to the extent required by the authorised milestone (retrieving the three target PDFs), per the engagement's rules of engagement.
 
 ### Problem 2. Choosing the right wordlist/strategy for three different PDFs
