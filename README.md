@@ -299,7 +299,7 @@ To protect the privacy of the simulated data subjects in this exercise:
 ## 👤 Author
 **Tsepo Maroibaki**
 * Network Operations Center & Cybersecurity
-* Networkwalks Cybersecurity Program (Batch B083)
+* Networkwalks Cybersecurity Program (Batch B084)
 * **LinkedIn:** [https://www.linkedin.com/in/tsepo-maroibaki-88234921a](https://www.linkedin.com/in/tsepo-maroibaki-88234921a)
 * **GitHub Repository:** https://github.com/Maroibakit/NETWORKWALKS-B084-WK4-PENETRATION-TESTING-PROJECT/tree/main
 
