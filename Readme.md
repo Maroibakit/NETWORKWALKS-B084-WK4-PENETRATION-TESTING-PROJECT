@@ -134,9 +134,6 @@ Reviewing `robots.txt` and crawling linked paths revealed three disallowed-but-a
 | `/patient/` | Directory indexing enabled — contained patient-facing report assets |
 | `/staff/` | Directory indexing enabled — contained staff-facing resources |
 
-![Directory listing evidence](images/4-screenshot-directory-listing.png)
-> *Description: Directory indexing exposing the contents of `/old/`, `/patient/` and `/staff/`.*
-
 **Analysis:** `robots.txt` effectively published the location of these sensitive directories rather than hiding them, and the server's directory-indexing configuration then listed their full contents to any unauthenticated visitor.
 
 ---
@@ -148,7 +145,7 @@ The hospital's patient-facing lookup/login mechanism, intended to gate access to
 - Varying the submitted identifier value produced differential application responses, allowing enumeration and identification of patient records without legitimate credentials — an improper input-validation / broken-authentication weakness rather than a brute-force of a strong control.
 - No effective rate limiting, account lockout, or generic error-handling behaviour was observed.
 
-**Analysis:** this is the root-cause finding (OWASP A07: Identification and Authentication Failures) that enabled the access gained in Part 3.
+**Analysis:** This is the root-cause finding (OWASP A07: Identification and Authentication Failures) that enabled the access gained in Part 3.
 
 ---
 
@@ -243,7 +240,7 @@ Following the directory-indexing finding in Part 1, `/old/` was found to contain
 ### Problem 1. Weak lookup validation masked as a "login"
 The patient-record lookup initially looked like a standard authentication form, which made the input-handling weakness easy to overlook at first glance.
 * **Investigation:** Varying input systematically and comparing full response bodies (not just status codes) surfaced the differential behaviour that pointed to an underlying enumeration/input-validation flaw.
-* **Resolution:** once confirmed, the weakness was used only to the extent required by the authorised milestone (retrieving the three target PDFs), per the engagement's rules of engagement.
+* **Resolution:** Once confirmed, the weakness was used only to the extent required by the authorised milestone (retrieving the three target PDFs), per the engagement's rules of engagement.
 
 ### Problem 2. Choosing the right wordlist/strategy for three different PDFs
 Not every file cracked under the same initial approach.
@@ -288,7 +285,7 @@ These activities were performed **strictly for educational, research and authori
 To protect the privacy of the simulated data subjects in this exercise:
 - Patient-identifying fields (name, ID, date of birth, referring doctor, specimen/lab reference) are redacted in every screenshot in this repository.
 - Recovered document passwords are **not** published anywhere in this repository.
-- Row-level staff and shareholder data (names, national-ID numbers, exact salaries, shareholdings) is **not** published; findings are summarised by category and count only. Full evidence was supplied to the instructor separately as required by the engagement deliverables.
+- Row-level staff and shareholder data (names, national ID numbers, exact salaries, shareholdings) is **not** published; findings are summarised by category and count only. Full evidence was supplied to the instructor separately as required by the engagement deliverables.
 
 ---
 
